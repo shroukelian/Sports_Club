@@ -1,0 +1,475 @@
+:root {
+    --primary: #adff2f; /* الأخضر النيوني */
+    --secondary: #0a0a0a;
+    --dark-grey: #151515;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* ده بيمنع السكرول العرضي اللي بيعمل مشاكل في الموبايل */
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.highlight { color: var(--primary); }
+
+/* Navbar المطور */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.btn-nav {
+    background: var(--primary);
+    color: var(--secondary) !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+   /* الحل القديم (كاحتياط للمتصفحات القديمة جداً) */
+    height: 100vh; 
+    
+    /* الحل السحري: بيخلي القسم يملأ الشاشة بالظبط مهما ظهر شريط العنوان */
+    min-height: 100dvh; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* تأكد من الخصائص دي عشان الصورة متبقاش ممطوطة */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* About Section المظبوط */
+.about {
+    padding: 100px 0;
+}
+
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-img, .about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid rgba(173, 255, 47, 0.2);
+}
+
+.sub-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.features-list i {
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+/* Services Cards المطور */
+.services {
+    padding: 100px 0;
+    background: var(--dark-grey);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.s-card {
+    background: var(--secondary);
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 20px;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.s-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.s-card:hover {
+    transform: translateY(-10px);
+    background: #1c1c1c;
+}
+
+.s-card:hover::before { transform: scaleX(1); }
+
+.s-card i {
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-flex { flex-direction: column-reverse; text-align: center; }
+    .features-list li { justify-content: center; }
+}
+/* Pricing Section */
+.pricing { padding: 100px 0; background: var(--secondary); }
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.price-card {
+    background: var(--dark-grey);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+    position: relative;
+}
+
+.price-card.featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: #000;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    border-radius: 50px;
+}
+
+.price-card h3 { margin-bottom: 20px; font-size: 1.5rem; }
+
+.price { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 30px; }
+.price span { font-size: 1rem; color: var(--text-grey); }
+
+.price-card ul { list-style: none; margin-bottom: 30px; text-align: right; }
+.price-card ul li { margin-bottom: 15px; font-size: 0.95rem; }
+.price-card ul li i { margin-left: 10px; color: var(--primary); }
+.price-card ul li.disabled { opacity: 0.4; text-decoration: line-through; }
+
+/* Main Footer Fix */
+.main-footer {
+    background: #050505;
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-col h4 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.footer-col p { color: var(--text-grey); font-size: 0.95rem; line-height: 1.8; }
+
+.social-icons { display: flex; gap: 15px; margin-top: 20px; }
+.social-icons a {
+    width: 40px; height: 40px;
+    background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: var(--white);
+    transition: var(--transition);
+}
+.social-icons a:hover { background: var(--primary); color: #000; }
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 15px; }
+.footer-col ul li a { color: var(--text-grey); text-decoration: none; transition: var(--transition); }
+.footer-col ul li a:hover { color: var(--primary); padding-right: 5px; }
+
+.contact-info li { display: flex; align-items: center; gap: 15px; color: var(--text-grey); }
+.contact-info i { color: var(--primary); }
+
+.bottom-bar {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-grey);
+    font-size: 0.85rem;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .price-card.featured { transform: scale(1); }
+    .footer-grid { text-align: center; }
+    .social-icons, .contact-info li { justify-content: center; }
+}
+/* --- 1. حل مشكلة علامة التلات شرطات (المنيو) --- */
+.menu-btn {
+    display: none; /* مخفية تماماً في شاشات الكمبيوتر */
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- 2. توحيد ستايل الأزرار ومنع اللون البنفسجي الافتراضي --- */
+.btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none; /* حذف الخط اللي تحت الكلمة */
+    font-weight: 700;
+    display: inline-block;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+/* الزر الأساسي (الأخضر) */
+.btn.primary {
+    background-color: var(--primary);
+    color: var(--secondary) !important; /* ضمان اللون الأسود للكتابة */
+}
+
+.btn.primary:hover {
+    background-color: #fff;
+    transform: translateY(-3px);
+}
+
+/* الزر الفرعي (الشفاف بإطار) */
+.btn.secondary {
+    border: 2px solid var(--white);
+    color: var(--white) !important;
+    background: transparent;
+}
+
+.btn.secondary:hover {
+    background-color: var(--white);
+    color: var(--secondary) !important;
+}
+
+/* --- 3. ضبط المسافات في الهيرو (Hero) --- */
+.hero-btns {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- 4. إظهار المنيو في الموبايل فقط --- */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* تظهر فقط في الشاشات الصغيرة */
+    }
+
+    .nav-links {
+        display: none; /* كود الجافاسكريبت هيظهرها لما تضغط على المنيو */
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 80%; /* تكبير الأزرار في الموبايل لسهولة الضغط */
+        text-align: center;
+    }
+}
+
+/* --- تنسيق قسم تواصل معنا (Form) --- */
+.contact-section {
+    padding: 100px 0;
+    background-color: var(--secondary); /* الخلفية السوداء */
+}
+
+.gym-form {
+    max-width: 600px; /* عرض مناسب للفورم */
+    margin: 0 auto;
+    background: var(--dark-grey); /* رمادي غامق جداً */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(173, 255, 47, 0.1); /* إطار أخضر خفيف جداً */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gym-form input, 
+.gym-form select {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05); /* خلفية شبه شفافة */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* تأثير عند الضغط على الخانة (Focus) */
+.gym-form input:focus, 
+.gym-form select:focus {
+    border-color: var(--primary); /* يتحول الإطار للأخضر النيوني */
+    background: rgba(173, 255, 47, 0.05);
+}
+
+/* تنسيق قائمة الاختيارات (Select) */
+.gym-form select {
+    cursor: pointer;
+    appearance: none; /* إزالة سهم المتصفح الافتراضي */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23adff2f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 20px center; /* وضع السهم جهة اليسار لأن الموقع عربي */
+    background-size: 18px;
+}
+
+/* تعديل خلفية خيارات القائمة لتبدو داكنة */
+.gym-form select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* زر الإرسال داخل الفورم */
+.gym-form .btn {
+    width: 100%; /* الزر يأخذ العرض كاملاً */
+    padding: 18px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ضبط الفورم للموبايل */
+@media (max-width: 768px) {
+    .gym-form {
+        padding: 30px 20px;
+        width: 95%; /* استغلال مساحة الشاشة في الموبايل */
+    }
+    
+    .contact-section .section-title {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+}
+
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي تيتانيوم الرياضي | Titanium Gym</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+  <!-- Navbar المحدث بجميع الأقسام -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i> <span>TITANIUM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">عن النادي</a></li>
+                <li><a href="#services">الرياضات</a></li>
+                <li><a href="#pricing">الباقات</a></li> <!-- القسم الجديد -->
+                <li><a href="#contact-form">تواصل معنا</a></li> <!-- القسم الجديد -->
+                <li><a href="#pricing" class="btn-nav">اشترك الآن</a></li>
+            </ul>
+            <div class="menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>ابنِ جسدك.. <span class="highlight">ابنِ مستقبلك</span></h1>
+            <p>انضم الآن لأكبر نادي رياضي متكامل بأحدث الأجهزة والمدربين الدوليين.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn primary">ابدأ رحلتك الآن</a>
+                <a href="#services" class="btn secondary">استكشف برامجنا</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- About Section (تعديل الترتيب) -->
+    <section id="about" class="about">
+        <div class="container about-flex">
+            <div class="about-img" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Gym">
+            </div>
+            <div class="about-text" data-aos="fade-right">
+                <h2 class="sub-title">لماذا تختار <span class="highlight">تيتانيوم؟</span></h2>
+                <p>نحن نوفر لك بيئة رياضية متكاملة تساعدك على الوصول لأهدافك الصحية والبدنية بأعلى معايير الجودة
+                    العالمية.</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> <span>أحدث الأجهزة الرياضية العالمية.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>مدربون دوليون معتمدون.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>متابعة دورية وخطط تغذية مخصصة.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">رياضاتنا <span class="highlight">المتميزة</span></h2>
+            <div class="services-grid">
+                <div class="s-card" data-aos="zoom-in">
+                    <i class="fas fa-weight-hanging"></i>
+                    <h3>كمال الأجسام</h3>
+                    <p>منطقة متكاملة لرفع الأثقال وتشكيل العضلات بأفضل التقنيات.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-person-swimming"></i>
+                    <h3>السباحة</h3>
+                    <p>حمامات سباحة أوليمبية مع دروس تعليمية لكافة الأعمار.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-child-reaching"></i>
+                    <h3>اليوجا</h3>
+                    <p>حصص مخصصة للاسترخاء الذهني ومرونة الجسد تحت إشراف متخصصين.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-hand-fist"></i>
+                    <h3>فنون قتالية</h3>
+                    <p>تعلم الدفاع عن النفس (كاراتيه، كيك بوكسينج) للأطفال والكبار.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم باقات الاشتراك -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">باقات <span class="highlight">الاشتراك</span></h2>
+            <div class="pricing-grid">
+                <!-- باقة 1 -->
+                <div class="price-card" data-aos="fade-up">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">250 <span>ج.م / شهر</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> دخول الجيم (8 صباحاً - 4 مساءً)</li>
+                        <li><i class="fas fa-check"></i> تقييم بدني أولي</li>
+                        <li class="disabled"><i class="fas fa-times"></i> حصص تدريب خاصة</li>
+                    </ul>
+                    <a href="#" class="btn secondary">اشترك الآن</a>
+                </div>
+                <!-- باقة 2 (المميزة) -->
+                <div class="price-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="badge">الأكثر طلباً</div>
+                    <h3>الباقة الذهبية</h3>
+                    <div class="price">500 <span>ج.م / شهر</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> دخول الجيم (24 ساعة)</li>
+                        <li><i class="fas fa-check"></i> حصص اليوجا والسباحة</li>
+                        <li><i class="fas fa-check"></i> خصم 20% على المكملات</li>
+                    </ul>
+                    <a href="#" class="btn primary">اشترك الآن</a>
+                </div>
+                <!-- باقة 3 -->
+                <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>باقة المحترفين</h3>
+                    <div class="price">800 <span>ج.م / شهر</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> جميع مزايا الباقة الذهبية</li>
+                        <li><i class="fas fa-check"></i> مدرب شخصي (4 حصص)</li>
+                        <li><i class="fas fa-check"></i> خطة تغذية شهرية</li>
+                    </ul>
+                    <a href="#" class="btn secondary">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تواصل معنا (Form) -->
+    <section id="contact-form" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">احجز <span class="highlight">جلستك الأولى</span> مجاناً</h2>
+            <form class="gym-form" data-aos="fade-up">
+                <input type="text" placeholder="الاسم بالكامل" required>
+                <input type="tel" placeholder="رقم الهاتف" required>
+                <select>
+                    <option>اختر الرياضة</option>
+                    <option>كمال أجسام</option>
+                    <option>سباحة</option>
+                    <option>يوجا</option>
+                </select>
+                <button type="submit" class="btn primary">إرسال الطلب</button>
+            </form>
+        </div>
+    </section>
+    <!-- الفوتر المطور والمظبوط -->
+    <footer class="main-footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i> <span>TITANIUM</span>
+                </div>
+                <p>نحن هنا لنساعدك على تغيير حياتك للأفضل. هدفنا هو بناء مجتمع رياضي قوي وصحي.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن النادي</a></li>
+                    <li><a href="#services">الرياضات</a></li>
+                    <li><a href="#pricing">الأسعار</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> القاهرة - مدينة نصر - شارع الرياضة</li>
+                    <li><i class="fas fa-phone"></i> 0123456789</li>
+                    <li><i class="fas fa-envelope"></i> info@titanium-gym.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>جميع الحقوق محفوظة لنادي تيتانيوم &copy; 2026 | مشروع تخرج</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
