@@ -1,10 +1,8 @@
-// تفعيل مكتبة الحركات (AOS)
 AOS.init({
     duration: 1000,
     once: true
 });
 
-// تغيير خلفية الهيدر عند التمرير
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -20,7 +18,6 @@ const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
 menuBtn.addEventListener('click', () => {
-    // التبديل بين إظهار وإخفاء المنيو في الموبايل
     if (navLinks.style.display === 'flex') {
         navLinks.style.display = 'none';
     } else {
