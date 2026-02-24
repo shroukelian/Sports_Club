@@ -861,3 +861,63 @@ body {
         grid-template-columns: 1fr; /* كارت واحد في كل صف للجوال */
     }
 }
+
+/* --- ضبط احترافي للموبايل --- */
+@media (max-width: 768px) {
+    /* 1. ضبط مساحة الهيرو بالكامل */
+    .hero {
+        padding: 80px 20px 40px; /* مسافة من فوق عشان المنيو */
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* 2. تصغير العنوان الرئيسي ليناسب الشاشة */
+    .hero h1 {
+        font-size: 1.7rem !important; /* حجم مثالي للموبايل */
+        line-height: 1.4;
+        margin-bottom: 15px;
+        font-weight: 800;
+    }
+
+    /* 3. ضبط النص الوصفي (الباراجراف) */
+    .hero p {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 0 5px; /* مسافة أمان من الجوانب */
+    }
+
+    /* 4. ترتيب الأزرار فوق بعضها لسهولة الضغط */
+    .hero-btns {
+        display: flex;
+        flex-direction: column; /* أزرار تحت بعض */
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero .btn {
+        width: 100%; /* الزر يأخذ العرض كامل */
+        max-width: 280px; /* لكن بحد أقصى عشان ميبقاش عريض أوي */
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    /* 5. ضبط الهيدر واللوجو في الموبايل */
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* 6. منع السكرول العرضي تماماً */
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+    }
+}
